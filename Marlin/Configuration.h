@@ -394,7 +394,7 @@
 // Mechanical endstop with COM to ground and NC to Signal uses "false" here (most common setup).
 const bool X_MIN_ENDSTOP_INVERTING = true; // set to true to invert the logic of the endstop.
 const bool Y_MIN_ENDSTOP_INVERTING = true; // set to true to invert the logic of the endstop.
-const bool Z_MIN_ENDSTOP_INVERTING = false; // set to true to invert the logic of the endstop.
+const bool Z_MIN_ENDSTOP_INVERTING = false; // set to true to invert the logic of the endstop. // Set false for NPN inductive leveling
 const bool X_MAX_ENDSTOP_INVERTING = true; // set to true to invert the logic of the endstop.
 const bool Y_MAX_ENDSTOP_INVERTING = true; // set to true to invert the logic of the endstop.
 const bool Z_MAX_ENDSTOP_INVERTING = true; // set to true to invert the logic of the endstop.
@@ -572,10 +572,12 @@ const bool Z_MIN_PROBE_ENDSTOP_INVERTING = false; // set to true to invert the l
 
   #if ENABLED(AUTO_BED_LEVELING_GRID)
 
-    #define LEFT_PROBE_BED_POSITION 33
-    #define RIGHT_PROBE_BED_POSITION 195
-    #define FRONT_PROBE_BED_POSITION 20
-    #define BACK_PROBE_BED_POSITION 170
+    // MalaMaker: Set to auto adjust based on X/Y travel area
+      // Based on the inductive sensor being in line with the extruder on the x axis and offset to the right of the extruder by approximately 25mm
+    #define LEFT_PROBE_BED_POSITION (X_MIN_POS)
+    #define RIGHT_PROBE_BED_POSITION (X_MAX_POS - (75))
+    #define FRONT_PROBE_BED_POSITION (X_MIN_POS + (20))
+    #define BACK_PROBE_BED_POSITION (Y_MAX_POS - (28))
 
     #define MIN_PROBE_EDGE 10 // The Z probe minimum square sides can be no smaller than this.
 

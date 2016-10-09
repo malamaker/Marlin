@@ -76,7 +76,7 @@
 #define Z_STEP_PIN         46
 #define Z_DIR_PIN          48
 #define Z_ENABLE_PIN       62
-#define Z_MIN_PIN          18
+#define Z_MIN_PIN          4
 #define Z_MAX_PIN          19
 
 #define E0_STEP_PIN        26
@@ -115,7 +115,7 @@
   #define FAN_PIN           4 // IO pin. Buffer needed
 #endif
 
-#define PS_ON_PIN          12
+#define PS_ON_PIN          -1
 
 #if ENABLED(REPRAP_DISCOUNT_SMART_CONTROLLER) || ENABLED(G3D_PANEL)
   #define KILL_PIN         41

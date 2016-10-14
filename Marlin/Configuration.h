@@ -297,9 +297,9 @@
   #define PID_BED_INTEGRAL_DRIVE_MAX MAX_BED_POWER //limit for the integral term
 
   //12V/24V PCB heater into 4mm mirror glass (MendelMax 1.5+)
-  #define  DEFAULT_bedKp 443.70
-  #define  DEFAULT_bedKi 26.76
-  #define  DEFAULT_bedKd 1839.20
+  #define  DEFAULT_bedKp 137.83
+  #define  DEFAULT_bedKi 11.31
+  #define  DEFAULT_bedKd 420.03
 
   //120V 250W silicone heater into 4mm borosilicate (MendelMax 1.5+)
   //from FOPDT model - kp=.39 Tp=405 Tdead=66, Tc set to 79.2, aggressive factor of .15 (vs .1, 1, 10)
@@ -617,7 +617,7 @@ const bool Z_MIN_PROBE_ENDSTOP_INVERTING = false; // set to true to invert the l
   //  (0,0)
   #define X_PROBE_OFFSET_FROM_EXTRUDER -26  // X offset: +left  -right  [of the nozzle]
   #define Y_PROBE_OFFSET_FROM_EXTRUDER 0  // Y offset: +front -behind [the nozzle]
-  #define Z_PROBE_OFFSET_FROM_EXTRUDER -2.5   // Z offset: -above +below  [the nozzle]
+  #define Z_PROBE_OFFSET_FROM_EXTRUDER -1.50   // Z offset: -above +below  [the nozzle]
 
   #define XY_TRAVEL_SPEED 6000         // X and Y axis travel speed between probes, in mm/min.
 

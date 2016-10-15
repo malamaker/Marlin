@@ -394,7 +394,7 @@
 // Mechanical endstop with COM to ground and NC to Signal uses "false" here (most common setup).
 const bool X_MIN_ENDSTOP_INVERTING = true; // set to true to invert the logic of the endstop.
 const bool Y_MIN_ENDSTOP_INVERTING = true; // set to true to invert the logic of the endstop.
-const bool Z_MIN_ENDSTOP_INVERTING = true; // set to true to invert the logic of the endstop.
+const bool Z_MIN_ENDSTOP_INVERTING = true; // set to true to invert the logic of the endstop. // Set false for PNP inductive leveling, true for NPN inductive leveling
 const bool X_MAX_ENDSTOP_INVERTING = true; // set to true to invert the logic of the endstop.
 const bool Y_MAX_ENDSTOP_INVERTING = true; // set to true to invert the logic of the endstop.
 const bool Z_MAX_ENDSTOP_INVERTING = true; // set to true to invert the logic of the endstop.
@@ -615,9 +615,9 @@ const bool Z_MIN_PROBE_ENDSTOP_INVERTING = false; // set to true to invert the l
   //    |           |
   //    O-- FRONT --+
   //  (0,0)
-  #define X_PROBE_OFFSET_FROM_EXTRUDER 26  // X offset: +left  -right  [of the nozzle]
+  #define X_PROBE_OFFSET_FROM_EXTRUDER 26  // X offset: -left  +right  [of the nozzle]
   #define Y_PROBE_OFFSET_FROM_EXTRUDER 0  // Y offset: +front -behind [the nozzle]
-  #define Z_PROBE_OFFSET_FROM_EXTRUDER -1.50   // Z offset: -above +below  [the nozzle]
+  #define Z_PROBE_OFFSET_FROM_EXTRUDER 0   // Z offset: +above -below  [the nozzle]
 
   #define XY_TRAVEL_SPEED 6000         // X and Y axis travel speed between probes, in mm/min.
 

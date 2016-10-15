@@ -572,10 +572,12 @@ const bool Z_MIN_PROBE_ENDSTOP_INVERTING = false; // set to true to invert the l
 
   #if ENABLED(AUTO_BED_LEVELING_GRID)
 
-    #define LEFT_PROBE_BED_POSITION 33
-    #define RIGHT_PROBE_BED_POSITION 195
-    #define FRONT_PROBE_BED_POSITION 20
-    #define BACK_PROBE_BED_POSITION 170
+    // MalaMaker: Set to auto adjust based on X/Y travel area
+      // Based on the inductive sensor being in line with the extruder on the x axis and offset to the right of the extruder by approximately 25mm
+    #define LEFT_PROBE_BED_POSITION (X_MIN_POS + 26)
+    #define RIGHT_PROBE_BED_POSITION (X_MAX_POS - (30))
+    #define FRONT_PROBE_BED_POSITION (Y_MIN_POS + (20))
+    #define BACK_PROBE_BED_POSITION (Y_MAX_POS - (28))
 
     #define MIN_PROBE_EDGE 10 // The Z probe minimum square sides can be no smaller than this.
 
@@ -605,17 +607,17 @@ const bool Z_MIN_PROBE_ENDSTOP_INVERTING = false; // set to true to invert the l
   //
   //    +-- BACK ---+
   //    |           |
-  //  L |    (+) P  | R <-- probe (20,20)
+  //  L |    (-) P  | R <-- probe (20,20)
   //  E |           | I
-  //  F | (-) N (+) | G <-- nozzle (10,10)
+  //  F | (+) N (-) | G <-- nozzle (10,10)
   //  T |           | H
-  //    |    (-)    | T
+  //    |    (+)    | T
   //    |           |
   //    O-- FRONT --+
   //  (0,0)
-  #define X_PROBE_OFFSET_FROM_EXTRUDER -26  // X offset: -left  +right  [of the nozzle]
-  #define Y_PROBE_OFFSET_FROM_EXTRUDER 0  // Y offset: -front +behind [the nozzle]
-  #define Z_PROBE_OFFSET_FROM_EXTRUDER 2   // Z offset: -below +above  [the nozzle]
+  #define X_PROBE_OFFSET_FROM_EXTRUDER 26  // X offset: +left  -right  [of the nozzle]
+  #define Y_PROBE_OFFSET_FROM_EXTRUDER 0  // Y offset: +front -behind [the nozzle]
+  #define Z_PROBE_OFFSET_FROM_EXTRUDER -1.50   // Z offset: -above +below  [the nozzle]
 
   #define XY_TRAVEL_SPEED 6000         // X and Y axis travel speed between probes, in mm/min.
 

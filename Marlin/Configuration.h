@@ -504,7 +504,7 @@ const bool Z_MIN_PROBE_ENDSTOP_INVERTING = false; // set to true to invert the l
 #define X_MIN_POS 0
 #define Y_MAX_POS 198
 #define Y_MIN_POS -2
-#define Z_MAX_POS 190
+#define Z_MAX_POS 185
 #define Z_MIN_POS -3
 
 //===========================================================================

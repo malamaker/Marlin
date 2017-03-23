@@ -500,11 +500,11 @@ const bool Z_MIN_PROBE_ENDSTOP_INVERTING = false; // set to true to invert the l
 // @section machine
 
 // Travel limits after homing (units are in mm)
-#define X_MAX_POS 225
-#define X_MIN_POS 0
-#define Y_MAX_POS 198
-#define Y_MIN_POS -2
-#define Z_MAX_POS 180
+#define X_MAX_POS 290
+#define X_MIN_POS -22
+#define Y_MAX_POS 275
+#define Y_MIN_POS -5
+#define Z_MAX_POS 230
 #define Z_MIN_POS -3
 
 //===========================================================================
@@ -677,11 +677,12 @@ const bool Z_MIN_PROBE_ENDSTOP_INVERTING = false; // set to true to invert the l
 // - If stepper drivers time out, it will need X and Y homing again before Z homing.
 // - Position the Z probe in a defined XY point before Z Homing when homing all axes (G28).
 // - Prevent Z homing when the Z probe is outside bed area.
-//#define Z_SAFE_HOMING
+#define Z_SAFE_HOMING
 
 #if ENABLED(Z_SAFE_HOMING)
   #define Z_SAFE_HOMING_X_POINT ((X_MIN_POS + X_MAX_POS) / 2)    // X point for Z homing when homing all axis (G28).
-  #define Z_SAFE_HOMING_Y_POINT ((Y_MIN_POS + Y_MAX_POS) / 2)    // Y point for Z homing when homing all axis (G28).
+  //#define Z_SAFE_HOMING_Y_POINT ((Y_MIN_POS + Y_MAX_POS) / 2)    // Y point for Z homing when homing all axis (G28).
+  #define Z_SAFE_HOMING_Y_POINT (20)    // Y point for Z homing when homing all axis (G28).
 #endif
 
 
@@ -695,7 +696,7 @@ const bool Z_MIN_PROBE_ENDSTOP_INVERTING = false; // set to true to invert the l
 
 // default settings
 
-#define DEFAULT_AXIS_STEPS_PER_UNIT   {80,80,4000,90}  // default steps per unit for Ultimaker
+#define DEFAULT_AXIS_STEPS_PER_UNIT   {80,80,3200,90}  // default steps per unit for Ultimaker
 #define DEFAULT_MAX_FEEDRATE          {450, 450, 3, 10}    // (mm/sec)
 #define DEFAULT_MAX_ACCELERATION      {4500,4500,75,10000}    // X, Y, Z, E maximum start speed for accelerated moves. E default values are good for Skeinforge 40+, for older versions raise them a lot.
 

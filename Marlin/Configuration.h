@@ -501,7 +501,7 @@ const bool Z_MIN_PROBE_ENDSTOP_INVERTING = false; // set to true to invert the l
 
 // Travel limits after homing (units are in mm)
 #define X_MAX_POS 290
-#define X_MIN_POS -22
+#define X_MIN_POS -10
 #define Y_MAX_POS 275
 #define Y_MIN_POS -5
 #define Z_MAX_POS 230
@@ -574,10 +574,10 @@ const bool Z_MIN_PROBE_ENDSTOP_INVERTING = false; // set to true to invert the l
 
     // MalaMaker: Set to auto adjust based on X/Y travel area
       // Based on the inductive sensor being in line with the extruder on the x axis and offset to the right of the extruder by approximately 25mm
-    #define LEFT_PROBE_BED_POSITION (X_MIN_POS + 26)
-    #define RIGHT_PROBE_BED_POSITION (X_MAX_POS - (30))
-    #define FRONT_PROBE_BED_POSITION (Y_MIN_POS + (20))
-    #define BACK_PROBE_BED_POSITION (Y_MAX_POS - (28))
+    #define LEFT_PROBE_BED_POSITION (X_MIN_POS + 36)
+    #define RIGHT_PROBE_BED_POSITION (X_MAX_POS - (10))
+    #define FRONT_PROBE_BED_POSITION (Y_MIN_POS + (27))
+    #define BACK_PROBE_BED_POSITION (Y_MAX_POS - (10))
 
     #define MIN_PROBE_EDGE 10 // The Z probe minimum square sides can be no smaller than this.
 
@@ -615,8 +615,8 @@ const bool Z_MIN_PROBE_ENDSTOP_INVERTING = false; // set to true to invert the l
   //    |           |
   //    O-- FRONT --+
   //  (0,0)
-  #define X_PROBE_OFFSET_FROM_EXTRUDER 26  // X offset: -left  +right  [of the nozzle]
-  #define Y_PROBE_OFFSET_FROM_EXTRUDER 0  // Y offset: +front -behind [the nozzle]
+  #define X_PROBE_OFFSET_FROM_EXTRUDER 30  // X offset: -left  +right  [of the nozzle]
+  #define Y_PROBE_OFFSET_FROM_EXTRUDER 24  // Y offset: +front -behind [the nozzle]
   #define Z_PROBE_OFFSET_FROM_EXTRUDER 0   // Z offset: +above -below  [the nozzle]
 
   #define XY_TRAVEL_SPEED 6000         // X and Y axis travel speed between probes, in mm/min.
@@ -681,7 +681,7 @@ const bool Z_MIN_PROBE_ENDSTOP_INVERTING = false; // set to true to invert the l
 
 #if ENABLED(Z_SAFE_HOMING)
   #define Z_SAFE_HOMING_X_POINT ((X_MIN_POS + X_MAX_POS) / 2)    // X point for Z homing when homing all axis (G28).
-  //#define Z_SAFE_HOMING_Y_POINT ((Y_MIN_POS + Y_MAX_POS) / 2)    // Y point for Z homing when homing all axis (G28).
+  #define Z_SAFE_HOMING_Y_POINT (0)    // Y point for Z homing when homing all axis (G28).
   #define Z_SAFE_HOMING_Y_POINT (20)    // Y point for Z homing when homing all axis (G28).
 #endif
 
@@ -696,7 +696,7 @@ const bool Z_MIN_PROBE_ENDSTOP_INVERTING = false; // set to true to invert the l
 
 // default settings
 
-#define DEFAULT_AXIS_STEPS_PER_UNIT   {80,80,3200,90}  // default steps per unit for Ultimaker
+#define DEFAULT_AXIS_STEPS_PER_UNIT   {80,80,3200,418}  // default steps per unit for Ultimaker
 #define DEFAULT_MAX_FEEDRATE          {450, 450, 3, 10}    // (mm/sec)
 #define DEFAULT_MAX_ACCELERATION      {4500,4500,75,10000}    // X, Y, Z, E maximum start speed for accelerated moves. E default values are good for Skeinforge 40+, for older versions raise them a lot.
 

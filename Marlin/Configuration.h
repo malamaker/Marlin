@@ -247,9 +247,9 @@
 
   // If you are using a pre-configured hotend then you can use one of the value sets by uncommenting it
   // e3D 40w
-  #define  DEFAULT_Kp 28.74
-  #define  DEFAULT_Ki 3.68
-  #define  DEFAULT_Kd 56.03
+  #define  DEFAULT_Kp 16.62
+  #define  DEFAULT_Ki 1.27
+  #define  DEFAULT_Kd 53.94
   
   // Ultimaker
   //#define  DEFAULT_Kp 22.2
@@ -677,11 +677,12 @@ const bool Z_MIN_PROBE_ENDSTOP_INVERTING = false; // set to true to invert the l
 // - If stepper drivers time out, it will need X and Y homing again before Z homing.
 // - Position the Z probe in a defined XY point before Z Homing when homing all axes (G28).
 // - Prevent Z homing when the Z probe is outside bed area.
-//#define Z_SAFE_HOMING
+#define Z_SAFE_HOMING
 
 #if ENABLED(Z_SAFE_HOMING)
   #define Z_SAFE_HOMING_X_POINT ((X_MIN_POS + X_MAX_POS) / 2)    // X point for Z homing when homing all axis (G28).
-  #define Z_SAFE_HOMING_Y_POINT ((Y_MIN_POS + Y_MAX_POS) / 2)    // Y point for Z homing when homing all axis (G28).
+  //#define Z_SAFE_HOMING_Y_POINT ((Y_MIN_POS + Y_MAX_POS) / 2)    // Y point for Z homing when homing all axis (G28).
+  #define Z_SAFE_HOMING_Y_POINT (25)
 #endif
 
 
@@ -695,7 +696,7 @@ const bool Z_MIN_PROBE_ENDSTOP_INVERTING = false; // set to true to invert the l
 
 // default settings
 
-#define DEFAULT_AXIS_STEPS_PER_UNIT   {160,160,8000,360}  // default steps per unit for Ultimaker
+#define DEFAULT_AXIS_STEPS_PER_UNIT   {160,160,8000,473}  // default steps per unit for Ultimaker
 #define DEFAULT_MAX_FEEDRATE          {450, 450, 3, 10}    // (mm/sec)
 #define DEFAULT_MAX_ACCELERATION      {4500,4500,75,10000}    // X, Y, Z, E maximum start speed for accelerated moves. E default values are good for Skeinforge 40+, for older versions raise them a lot.
 
